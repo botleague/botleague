@@ -1,6 +1,6 @@
 Submit a pull request to this repo with an agent.json under 
 
-[agents](agents)/<your-github-org-or-user>/<your-repo-name>
+[agents](agents)/{your-github-org-or-user}/{your-repo-name}
 
 with an [agent.json](crizcraig/forward-agent/agent.json) to have your agent 
 evaluated and ranked on the leaderboards.
