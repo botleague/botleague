@@ -1,6 +1,5 @@
 {
   "source": "https://github.com/crizCraig/forward-agent/commit/defc93d95944099d3e61cda6542bb4ffe7a28abf",
-  "scenario_names": ["domain_randomization_sanity"],
+  "scenarios": ["domain_randomization_sanity"],
   "docker_tag": "crizcraig/forward-agent",
-  "sim": "https://s3-us-west-1.amazonaws.com/deepdrive/sim/deepdrive-sim-linux-3.0.20190225195958.zip"
 }
