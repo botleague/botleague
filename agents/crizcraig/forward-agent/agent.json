@@ -1,5 +1,0 @@
-{
-  "source": "https://github.com/crizCraig/forward-agent/commit/defc93d95944099d3e61cda6542bb4ffe7a28abf",
-  "scenarios": ["domain_randomization_sanity"],
-  "docker_tag": "crizcraig/forward-agent",
-}
