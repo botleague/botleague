@@ -1,4 +1,5 @@
 # Bot League
+_Where bots and problems come together_
 ## Open league for AI competition
 
 This repo coordinates an open league where bots are ranked on a set of community 
