@@ -2,15 +2,14 @@
 ## Open league for AI competition
 
 This repo coordinates an open league where bots are ranked on a set of community 
-contributed problems. It presents a way for anyone in the world to submit
+contributed problems. We provide an ongoing leaderboard of the best bots in the world on the problems and challenges provided. It presents a way for anyone in the world to submit
 a problem and for anyone in the world to compete on it in hopes of avoiding
-local optimums in AI. 
+local optimums in AI.
 
 ### Conceived for self-driving
 The league was conceived specifically for self-driving where industry feedback to academia is limited, despite academia being the major contributor of new algorithms to self-driving.
-With Bot League, a self-driving car company can present it's toughest problems (typically
-referred to as scenarios within self-driving) directly to the public and 
-to academia to openly compete on. 
+With Bot League, a self-driving car company can present it's toughest problems directly to the public and 
+to academia to compete on. 
 
 ### Generality
 Generality across problems is a key component of the way the league is structured, 
@@ -27,9 +26,9 @@ We provide a reference implementation of bots and problems via Deepdrive, and [T
  
 ### How it works
 
-Pull requests to [bots](bots) in this repo trigger evaluation on a set of [problems](problems). Pull requests with valid submissions will be automatically merged. Bots include a docker container and optionally writeups and source code that are pulled in and tested by the evaluation servers. Anyone can contribute a problem, so long as they support the minimal API. Example problem providers are currently Deepdrive and [TBA]. To create a problem in one the problem providers, refer to the docs of that provider.
+Pull requests to [bots](bots) in this repo trigger evaluation on the set of [problems](problems) designated in its bot.json. Pull requests are then evaluated, ranked on the leaderboards, and merged so long as they are in the correct format. Bots include a docker container and optionally writeups and source code that are pulled in and tested by problem evaluators. Anyone can contribute a problem, so long as they support the minimal API. Example problem providers are currently Deepdrive and [TBA]. To create a problem within one the problem providers, refer to the docs of that provider.
 
-
+_Side note_: Reproducibility is core to making progress in research, but we put the onus of that on the problem implementations, and choose to avoid enforcing it here for now in the name of simplicity.
 
 ## Bots
 
@@ -41,22 +40,30 @@ evaluated and ranked on the leaderboards.
 You must push the docker tag referred to in your bot.json before submitting the pull request.
  
 
-## Problems
+### Problems
 
 A list of problems to test your agent against can be found
 in [problems](problems).  # TODO: Link to problems page on leaderboards site to give an idea of what they involve
 
 A bot-league compatible endpoint mush be included in a new problem.
 
-### Problem endpoint
+#### Problem Endpoints
 
-All that's needed to implement a problem endpoint, is to accept requests at 
+Problem endpoints implement a simple API, accepting one request and sending a confirmation then results to liaison.botleague.io.
 
-`/eval/[problem_name]/[seed_value]`, i.e. `/eval/domain_randomization_sanity/9999999999`
+##### 1. Accept `/eval` POST
 
-Problem endpoints will receive pull request notifications from GitHub when a bot is submitted against the problem along with a secret problem-evaluation-key.
+`https://your-endpoint/eval/[problem_name]/[seed_value]`, i.e. `/eval/domain_randomization_sanity/9999999999?eval-key=asdf`
 
-The problem endpoint will make a request to the ci-hooks site at /problem-eval-complete along with the secret key to ensure it resulted from the originating request.
 
-A random seed value is generated upon pull request that is broadcast to all
-of the problem providers for that evaluation.
+Problem endpoints will receive pull request notifications when a bot is submitted along with a secret problem evaluation key (`eval-key`).
+
+One random seed value is also generated that is broadcast to all of the problem evaluators for the bot.
+
+##### 2. Send `/confirm` POST
+
+Problem evaluators must then send a confirmation request with the `eval-key` to `https://liaison.botleague.io/confirm` to verify that botleague indeed initiated the evaluation.
+
+##### 3. Send `results.json` POST
+
+Finally evaluators POST `results.json` to `https://liaison.botleague.io/results` with the `eval-key` to complete the evaluation and to be included on the Bot League leaderboards. An example `results.json` can be found [here](problems/examples/results.json).
