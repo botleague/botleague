@@ -1,4 +1,6 @@
-<style>
+
+
+<style type="text/css" rel="stylesheet">
   .problem-description {
     display: grid;
     grid-template-columns: minmax(125px, 4fr) 17px 8fr;
@@ -9,6 +11,8 @@
     height: 300px;
   }
 </style>
+
+
 <div class="problem-description">
   <div>
     Unprotected lefts involve taking a left turn across
