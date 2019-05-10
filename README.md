@@ -3,7 +3,8 @@
 ## Open league for AI competition
 
 This repo coordinates an open league where bots are ranked on a set of community 
-contributed problems. We provide an ongoing leaderboard of the best bots in the world on the problems and challenges provided. It presents a way for anyone in the world to submit
+contributed problems. We provide an ongoing leaderboard of the best bots in the 
+world on the problems and challenges provided. It presents a way for anyone in the world to submit
 a problem and for anyone in the world to compete on it in hopes of avoiding
 local optimums in AI.
 
@@ -27,7 +28,12 @@ We provide a reference implementation of bots and problems via Deepdrive, and [T
  
 ### How it works
 
-Pull requests to [bots](bots) in this repo trigger evaluation on the set of [problems](problems) designated in its bot.json. Pull requests are then evaluated, ranked on the leaderboards, and merged so long as they are in the correct format. Bots include a docker container and optionally writeups and source code that are pulled in and tested by problem evaluators. Anyone can contribute a problem, so long as they support the minimal API. Example problem providers are currently Deepdrive and [TBA]. To create a problem within one the problem providers, refer to the docs of that provider.
+High level: Submit a docker container with your bot and problems it solves, 
+and get ranked on botleague.io.
+
+Low level:
+
+Pull requests to [bots](bots) in this repo trigger evaluation on the set of [problems](problems) designated in its bot.json. Pull requests are then evaluated, ranked on the leaderboards, and merged so long as they are in the correct format. Bots include a docker container and optionally writeups and source code that are pulled in and tested by problem evaluators. Anyone can contribute a problem, so long as they support the minimal API. Example problem evaluators are currently Deepdrive and [TBA]. To create a problem within one the problem providers, refer to the docs of that provider.
 
 _Side note_: Reproducibility is core to making progress in research, but we put the onus of that on the problem implementations, and choose to avoid enforcing it here for now in the name of simplicity.
 
@@ -44,7 +50,9 @@ You must push the docker tag referred to in your bot.json before submitting the 
 ### Problems
 
 A list of problems to test your agent against can be found
-in [problems](problems).  # TODO: Link to problems page on leaderboards site to give an idea of what they involve
+in [problems](problems).
+
+# TODO: Link to problems page on leaderboards site to give an idea of what they involve
 
 A bot-league compatible endpoint mush be included in a new problem.
 
@@ -67,4 +75,9 @@ Problem evaluators must then send a confirmation request with the `eval-key` to 
 
 ##### 3. Send `results.json` POST
 
-Finally evaluators POST `results.json` to `https://liaison.botleague.io/results` with the `eval-key` to complete the evaluation and to be included on the Bot League leaderboards. An example `results.json` can be found [here](problems/examples/results.json).
+Finally evaluators POST `results.json` to `https://liaison.botleague.io/results` with the `eval-key` to complete the evaluation and to be included on the Bot League leaderboards. An example `results.json` can be found [here](problems/example_results/results.json).
+
+
+### Challenges
+
+Challenges are sets of problems a bot is tasked with generalizing across. 

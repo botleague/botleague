@@ -3,7 +3,7 @@
   "source": "https://github.com/crizCraig/forward-agent/commit/defc93d95944099d3e61cda6542bb4ffe7a28abf",
 
 
-  "$comment-PROBLEMS": "This is the list of problems your bot will be ranked on. If you wish to be ranked on a challenge, just include all of the scenarios in that challenge here.",
+  "$comment-PROBLEMS": "This is the list of problems your bot will be ranked on. If you wish to be ranked on a challenge, include all of the problems in that challenge here. Think of these problems as the skills your bot is trained to exhibit.",
   "problems": [
     "domain_randomization_sanity"
   ],

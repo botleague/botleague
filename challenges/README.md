@@ -1,0 +1,1 @@
+Challenges are sets of problems a bot is tasked with generalizing across.
