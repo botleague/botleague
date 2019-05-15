@@ -4,9 +4,8 @@
 
 This repo coordinates an open league where bots are ranked on a set of community 
 contributed problems. We provide an ongoing leaderboard of the best bots in the 
-world on the problems and challenges provided. It presents a way for anyone in the world to submit
-a problem and for anyone in the world to compete on it in hopes of avoiding
-local optimums in AI.
+world on the problems and challenges submitted. Anyone can submit
+a problem and and anyone can submit a bot.
 
 ### Conceived for self-driving
 The league was conceived specifically for self-driving where industry feedback to academia is limited, despite academia being the major contributor of new algorithms to self-driving.
