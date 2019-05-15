@@ -1,6 +1,7 @@
-Unprotected lefts involve taking a left turn across
-lanes of oncoming traffic that do not have a stop sign or traffic-light
-to "protect" the left turn. These are one of the most difficult
-situations
-to navigate as it requires dealing with oncoming cars taking left turns,
-right turns, and going straight.
+Tests end-to-end driving performance of one camera in the following visual input modalities (i.e. view modes):
+
+![Imgur](https://i.imgur.com/03QLmdk.jpg)
+
+Included in these view modes were depth, world normals, reflectivity, and roughness which can be seen as an approximation to a Lidar sensor. All of these modes are part of Unreal's graphics pipelines making them efficient to render.
+
+The hope is that this provides better generalization to real-world visual domains a la https://blog.openai.com/learning-dext...
