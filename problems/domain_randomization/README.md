@@ -1,4 +1,4 @@
-Tests end-to-end driving performance of one camera in the following visual input modalities (i.e. view modes):
+Short few second test (thus sanity) of end-to-end driving performance with one camera in the following visual input modalities (i.e. view modes):
 
 ![Imgur](https://i.imgur.com/03QLmdk.jpg)
 
