@@ -51,7 +51,7 @@ You must push the docker tag referred to in your bot.json before submitting the 
 A list of problems to test your agent against can be found
 in [problems](problems).
 
-# TODO: Link to problems page on leaderboards site to give an idea of what they involve
+TODO: Link to problems page on leaderboards site to give an idea of what they involve
 
 A bot-league compatible endpoint mush be included in a new problem.
 
