@@ -80,3 +80,69 @@ Finally evaluators POST `results.json` to `https://liaison.botleague.io/results`
 ### Challenges
 
 Challenges are sets of problems a bot is tasked with generalizing across. 
+
+## Problem versioning
+
+In order to support testing new versions of problems (the sim in our case), Botleague will cancel currently running evaluations against the old version when a change is made to `problem.json` and go into “problem CI” mode until the new problem version either passes or fails. If another problem update comes in while in “problem CI mode”, it will have to wait until the intermediate version finishes.
+
+For purposes of this doc, think of an endpoint in this form
+
+ [https://example.com/{problem_id](https://example.com/{problem_id)}
+
+i.e. [https://example.com/difficult_problem](https://example.com/difficult_problem) - Current version v1
+
+Where the problem.json is at
+
+[https://github.com/botleague/boteague/example/difficult_problem/problem.json](https://github.com/botleague/boteague/example/difficult_problem/problem.json)
+
+
+### Cases for rank ordering
+
+
+#### Rank ordering is the same on new and previous version (common case)
+
+**Resolution: **The new problem version becomes the default version
+
+
+#### Rank ordering changes due to bug in new problem version
+
+**Resolution: **CI Fails until bug is fixed
+
+
+#### Rank ordering changes due to desired change in problem implementation
+
+**Resolution: **
+
+
+#### Rank ordering changes on old bots, despite no problem.json change
+
+So here the endpoint has delivered a new rank ordering, say when some new bot comes along, while the problem endpoint has not reporting a new version. In this case, the old ranking is maintained and the old problem is copied into a new folder, e.g. **difficult_problem_v2** 
+
+ [https://example.com/difficult_problem v2](https://example.com/difficult_problem)
+
+at
+
+[https://github.com/botleague/boteague/example/difficult_problem_v2/problem.json](https://github.com/botleague/boteague/example/difficult_problem/problem.json)
+
+In addition, the old problem is **archived** - via a change to its problem.json - until such time that the problem.json receives a pull request removing the archived flag and the endpoint restores the old rank ordering.
+
+Bot submissions with the old problem listed, i.e “difficult_problem” will have their bot.json automatically updated on GitHub with the new problem version and 
+
+Excluded versions
+
+
+
+*   
+
+Rank ordering maintained
+
+
+
+*   Avoiding score parity requirement for now
+
+
+### Testing for determinism
+
+For now we will handle this within the problem endpoint, although we should implement this functionality in a modular way as most problems will want some version of this, likely we different numbers of job runs based on resource constraints and variability of the evaluation.
+
+In Deepdrive, we should kick off **five** simultaneous runs for each evaluation, and use the median score, video, recording for the final score (also returning the scores, videos, and recordings for each of the five).
