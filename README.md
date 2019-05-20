@@ -83,7 +83,7 @@ Challenges are sets of problems a bot is tasked with generalizing across.
 
 ## Problem versioning
 
-In order to support testing new versions of problems (i.e. some new sim commit), Botleague will cancel currently running evaluations against the old version when a change is made to `problem.json` by sending a /cancel_eval request from the  and do a “problem CI” run. Bot submissions against the problem will be marked as pending until the problem CI is complete. If another problem update comes in while in “problem CI mode”, it will wait until the intermediate version finishes.
+In order to support testing new versions of problems (i.e. some new sim commit), Botleague will cancel currently running evaluations against the old version when a change is made to `problem.json` by sending a /cancel_eval request from the  and do a **Problem CI** run where all ranked bots are retested against the new problem version. Bot submissions against the problem will be marked as pending until the problem CI is complete. If another problem update comes in while in “problem CI mode”, it will wait until the intermediate version finishes.
 
 For purposes of explanation, think of an endpoint in this form
 
