@@ -105,12 +105,12 @@ Where the problem.json is at
 
 #### Rank ordering changes
 
-**Resolution:** Eval/CI fails, problem.json updated with `"archived": true`, and new bot submissions will be disabled for this problem. Problem endpoints can create a new problem if they intended for this change, in which case the old problem will remain archived, or fix the bug and submit a pull request with `"archived": false` in problem.json to trigger another **Problem CI Run**. If the rank ordering is detected on a bot pull request, as opposed to a problem pull request, we pause bot submissions on the problem in the same way, and notify the `problem.json` contact that the problem has been archived until ranking has been restored. 
+**Resolution:** Eval/CI fails, problem.json updated with `"archived": true`, and new bot submissions will be disabled for this problem. Problem endpoints can create a new problem if they intended for this change, in which case the old problem will remain archived, or fix the bug and submit a pull request with `"archived": false` in problem.json to trigger another **Problem CI Run**. If the rank ordering changes on a bot pull request, as opposed to a problem pull request, we pause bot submissions on the problem in the same way, and notify the `problem.json` `"contact"` that the problem has been archived until the original ranking has been restored. 
 
-We will avoid requiring score parity for now across problem versions. We will copy bot containers, so will always be able to test the old bots.
+We will avoid requiring score parity for now across problem versions. We will copy bot containers, so will always be able to test the old bots and get new scores.
 
 ### Testing for determinism
 
-For now we will handle this within the problem endpoint, although we should implement this functionality in a modular way as most problems will want some version of this, likely we different numbers of job runs based on resource constraints and variability of the evaluation.
+For now we will handle this within the problem endpoint, although we should implement this functionality in a modular way as most problems will want some version of this, likely with different numbers of job runs based on resource constraints and variability of the evaluation.
 
 In Deepdrive, we should kick off **five** simultaneous runs for each evaluation, and use the median score, video, recording for the final score (also returning the scores, videos, and recordings for each of the five).
