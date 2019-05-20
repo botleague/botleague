@@ -83,7 +83,7 @@ Challenges are sets of problems a bot is tasked with generalizing across.
 
 ## Problem versioning
 
-In order to support testing new versions of problems (i.e. some new sim commit), Botleague will cancel currently running evaluations against the old version when a change is made to `problem.json` by sending a /cancel_eval request from the  and do a **Problem CI** run where all ranked bots are retested against the new problem version. Bot submissions against the problem will be marked as pending until the problem CI is complete. If another problem update comes in while in “problem CI mode”, it will wait until the intermediate version finishes.
+In order to support testing new versions of problems (i.e. some new sim commit), Botleague will cancel currently running evaluations against the old version when a change is made to `problem.json` by sending a /cancel_eval request from the  and do a **Problem CI Run** where all ranked bots are retested against the new problem version. Bot submissions against the problem will be marked as pending until the problem CI is complete. If another problem update comes in while in “problem CI mode”, it will wait until the intermediate version finishes.
 
 For purposes of explanation, think of an endpoint in this form
 
@@ -100,12 +100,14 @@ Where the problem.json is at
 
 #### Rank ordering is the same on new and previous version (common case)
 
-**Resolution:** The new problem version becomes the default version, old scores are stored along with the problem.json commit and new scores are the default scores shown on the leaderboards. Points will be based soley from ranking, not score values, so the users' and bots' points will not change. 
+**Resolution:** The new problem version becomes the default version, old scores are stored along with the problem.json commit and new scores are the default scores shown on the leaderboards. Points will be based soley from ranking, not score values, so the users' and bots' points will not change.
+
+
 #### Rank ordering changes
 
-**Resolution:** Eval/CI fails, problem.json updated with "archived": true, and new bot submissions will be disabled for this problem. Problem endpoints can create a new problem if they intended for this change, in which case the old problem will remain archived, or fix the bug and submit a pull request with `"archived": false` in problem.json to trigger another ranking test. If the rank ordering is detected on a bot pull request, as opposed to a problem pull request, we pause bot submissions on the problem in the same way, and notify the problem.json contact that the problem has been archived. 
+**Resolution:** Eval/CI fails, problem.json updated with `"archived": true`, and new bot submissions will be disabled for this problem. Problem endpoints can create a new problem if they intended for this change, in which case the old problem will remain archived, or fix the bug and submit a pull request with `"archived": false` in problem.json to trigger another **Problem CI Run**. If the rank ordering is detected on a bot pull request, as opposed to a problem pull request, we pause bot submissions on the problem in the same way, and notify the `problem.json` contact that the problem has been archived until ranking has been restored. 
 
-Avoiding score parity requirement for now. We will keep our own bot containers on GCR, so will always be able to test the old bots.
+We will avoid requiring score parity for now across problem versions. We will copy bot containers, so will always be able to test the old bots.
 
 ### Testing for determinism
 
