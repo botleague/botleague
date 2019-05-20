@@ -113,4 +113,4 @@ We will avoid requiring score parity for now across problem versions. We will co
 
 For now we will handle this within the problem endpoint, although we should implement this functionality in a modular way as most problems will want some version of this, likely with different numbers of job runs based on resource constraints and variability of the evaluation.
 
-In Deepdrive, we should kick off **five** simultaneous runs for each evaluation, and use the median score, video, recording for the final score (also returning the scores, videos, and recordings for each of the five).
+For example Deepdrive, we kick off **five** simultaneous runs for each evaluation, and use the median score, video, recording for the final score (also returning the scores, videos, and recordings for each of the five).
