@@ -1,6 +1,5 @@
 {
-  "env_docker_digest": "asdfasdfasdf",
-  "sim_binary_zip_OR_api_url": "https://s3-us-west-1.amazonaws.com/deepdrive/ci/build/12341234/asdf.zip",
+  "endpoint": "https://example.com/domain_randomization",
   "author": "Craig Quiter",
   "sim_name": "Deepdrive",
   "display_name": "Domain Randomization Sanity",
