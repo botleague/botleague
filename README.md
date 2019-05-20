@@ -83,63 +83,29 @@ Challenges are sets of problems a bot is tasked with generalizing across.
 
 ## Problem versioning
 
-In order to support testing new versions of problems (the sim in our case), Botleague will cancel currently running evaluations against the old version when a change is made to `problem.json` and go into “problem CI” mode until the new problem version either passes or fails. If another problem update comes in while in “problem CI mode”, it will have to wait until the intermediate version finishes.
+In order to support testing new versions of problems (i.e. some new sim commit), Botleague will cancel currently running evaluations against the old version when a change is made to `problem.json` by sending a /cancel_eval request from the  and do a “problem CI” run. Bot submissions against the problem will be marked as pending until the problem CI is complete. If another problem update comes in while in “problem CI mode”, it will wait until the intermediate version finishes.
 
-For purposes of this doc, think of an endpoint in this form
+For purposes of explanation, think of an endpoint in this form
 
  [https://example.com/{problem_id](https://example.com/{problem_id)}
 
-i.e. [https://example.com/difficult_problem](https://example.com/difficult_problem) - Current version v1
+i.e. [https://example.com/difficult_problem](https://example.com/difficult_problem) - Current commit version `824914daaaee006a99086ff63b2544e3b5f55fab`
 
 Where the problem.json is at
 
 [https://github.com/botleague/boteague/example/difficult_problem/problem.json](https://github.com/botleague/boteague/example/difficult_problem/problem.json)
 
 
-### Cases for rank ordering
-
+### Cases for new rank ordering 
 
 #### Rank ordering is the same on new and previous version (common case)
 
-**Resolution: **The new problem version becomes the default version
+**Resolution:** The new problem version becomes the default version, old scores are stored along with the problem.json commit and new scores are the default scores shown on the leaderboards. Points will be based soley from ranking, not score values, so the users' and bots' points will not change. 
+#### Rank ordering changes
 
+**Resolution:** Eval/CI fails, problem.json updated with "archived": true, and new bot submissions will be disabled for this problem. Problem endpoints can create a new problem if they intended for this change, in which case the old problem will remain archived, or fix the bug and submit a pull request with `"archived": false` in problem.json to trigger another ranking test. If the rank ordering is detected on a bot pull request, as opposed to a problem pull request, we pause bot submissions on the problem in the same way, and notify the problem.json contact that the problem has been archived. 
 
-#### Rank ordering changes due to bug in new problem version
-
-**Resolution: **CI Fails until bug is fixed
-
-
-#### Rank ordering changes due to desired change in problem implementation
-
-**Resolution: **
-
-
-#### Rank ordering changes on old bots, despite no problem.json change
-
-So here the endpoint has delivered a new rank ordering, say when some new bot comes along, while the problem endpoint has not reporting a new version. In this case, the old ranking is maintained and the old problem is copied into a new folder, e.g. **difficult_problem_v2** 
-
- [https://example.com/difficult_problem v2](https://example.com/difficult_problem)
-
-at
-
-[https://github.com/botleague/boteague/example/difficult_problem_v2/problem.json](https://github.com/botleague/boteague/example/difficult_problem/problem.json)
-
-In addition, the old problem is **archived** - via a change to its problem.json - until such time that the problem.json receives a pull request removing the archived flag and the endpoint restores the old rank ordering.
-
-Bot submissions with the old problem listed, i.e “difficult_problem” will have their bot.json automatically updated on GitHub with the new problem version and 
-
-Excluded versions
-
-
-
-*   
-
-Rank ordering maintained
-
-
-
-*   Avoiding score parity requirement for now
-
+Avoiding score parity requirement for now. We will keep our own bot containers on GCR, so will always be able to test the old bots.
 
 ### Testing for determinism
 
