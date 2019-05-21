@@ -46,7 +46,7 @@ evaluated and ranked on the leaderboards.
 You must push the docker tag referred to in your bot.json before submitting the pull request.
  
 
-### Problems
+## Problems
 
 A list of problems to test your bot against can be found
 in [problems](problems).
@@ -55,11 +55,11 @@ TODO: Link to problems page on leaderboards site to give an idea of what they in
 
 A bot-league compatible endpoint mush be included in a new problem.
 
-#### Problem Endpoints
+### Problem Endpoints
 
 Problem endpoints implement a simple API, accepting one request and sending a confirmation then results to liaison.botleague.io.
 
-##### 1. Accept `/eval` POST
+#### 1. Accept `/eval` POST
 
 `https://your-endpoint/eval/[problem_name]`, i.e. `/eval/domain_randomization`
 
@@ -74,20 +74,15 @@ on this problem. Used to communicate back to liaison in `/confirm` and `/results
 `docker_link`: Link to docker image copied from source referenced in `bot.json` of the form: `gcr.io/botleague/{botleague-commit}`
 
 
-##### 2. Send `/confirm` POST
+#### 2. Send `/confirm` POST
 
 Problem evaluators must then send a confirmation request with the `eval-key` to `https://liaison.botleague.io/confirm` to verify that botleague indeed initiated the evaluation.
 
-##### 3. Send `results.json` POST
+#### 3. Send `results.json` POST
 
 Finally evaluators POST `results.json` to `https://liaison.botleague.io/results` with the `eval-key` to complete the evaluation and to be included on the Bot League leaderboards. An example `results.json` can be found [here](problems/example_results/results.json).
 
-
-### Challenges
-
-Challenges are sets of problems a bot is tasked with generalizing across. 
-
-## Problem versioning
+### Problem versioning
 
 In order to support testing new versions of problems (i.e. some new sim commit), Botleague will cancel currently running evaluations against the old version when a change is made to `problem.json` by sending a /cancel_eval request from the  and do a **Problem CI Run** where all ranked bots are retested against the new problem version. Bot submissions against the problem will be marked as pending until the problem CI is complete. If another problem update comes in while in “problem CI mode”, it will wait until the intermediate version finishes.
 
@@ -115,7 +110,11 @@ Where the problem.json is at
 
 We will avoid requiring score parity for now across problem versions. We will copy bot containers, so will always be able to test the old bots and get new scores.
 
-### Testing for determinism
+## Challenges
+
+Challenges are sets of problems a bot is tasked with generalizing across. 
+
+## Testing for determinism
 
 For now we will handle this within the problem endpoint, although we should implement this functionality in a modular way as most problems will want some version of this, likely with different numbers of job runs based on resource constraints and variability of the evaluation.
 
