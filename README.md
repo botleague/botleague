@@ -69,7 +69,7 @@ with JSON payload containing the following:
 the problem evaluators for the bot submission.
 
 `eval_key`: Secret problem evaluation key unique to the evaluation of the bot 
-on this problem. Used to communicate back to liaison in `/confirm` and `/results`.
+on this problem. Used to communicate back to liaison in `/confirm` and `/results` requests.
 
 `docker_link`: Link to docker image copied from source referenced in `bot.json` of the form: `gcr.io/botleague/{botleague-commit}`
 
