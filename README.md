@@ -61,7 +61,7 @@ Problem endpoints implement a simple API, accepting one request and sending a co
 
 ##### 1. Accept `/eval` POST
 
-`https://your-endpoint/eval/[problem_name]/[seed_value]`, i.e. `/eval/domain_randomization_sanity?seed=9999999999&eval-key=asdf`
+`https://your-endpoint/eval/[problem_name]?seed=[seed_value]`, i.e. `/eval/domain_randomization_sanity?seed=9999999999&eval-key=asdf`
 
 
 Problem endpoints will receive pull request notifications when a bot is submitted along with a secret problem evaluation key (`eval-key`).
