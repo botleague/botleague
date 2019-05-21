@@ -71,6 +71,8 @@ the problem evaluators for the bot submission.
 `eval_key`: Secret problem evaluation key unique to the evaluation of the bot 
 on this problem. Used to communicate back to liaison in `/confirm` and `/results`.
 
+`docker_link`: Link to docker image copied from source referenced in `bot.json` in the form: gcr.io/botleague/{botleague-commit}
+
 
 ##### 2. Send `/confirm` POST
 
