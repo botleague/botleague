@@ -40,7 +40,7 @@ _Side note_: Reproducibility is core to making progress in research, but we put 
 
 ### Submission
 
-Submit a pull request to this repo with a bot.json under [bots](bots)/{github-name}/{repo-name} - with a [bot.json](crizcraig/forward-bot/bot.json) to have your agent 
+Submit a pull request to this repo with a bot.json under [bots](bots)/{github-name}/{repo-name} - with a [bot.json](crizcraig/forward-bot/bot.json) to have your bot 
 evaluated and ranked on the leaderboards.
  
 You must push the docker tag referred to in your bot.json before submitting the pull request.
@@ -48,7 +48,7 @@ You must push the docker tag referred to in your bot.json before submitting the 
 
 ### Problems
 
-A list of problems to test your agent against can be found
+A list of problems to test your bot against can be found
 in [problems](problems).
 
 TODO: Link to problems page on leaderboards site to give an idea of what they involve
