@@ -73,6 +73,19 @@ on this problem. Used to communicate back to liaison in `/confirm` and `/results
 
 `docker_tag`: i.e. `your-dockerhub-name/your-bot` or `gcr.io/your-dockerhub-name/your-bot`
 
+`pull_request`: i.e.:
+```
+  "pull_request": {
+    "url": "https://api.github.com/repos/deepdrive/botleague/pulls/4",
+    "number": 4,
+    "updated_at": "2019-05-21T21:45:51Z",
+    "merge_commit_sha": "50f0f2d44e836f30d2815141c866cd2775bb8ec6",
+    "head_commit": "4dd65418bef710f5e668c33205040d6f40e7ef43",
+    "head_full_name": "deepdrive/botleague",
+    "base_commit": "a1e475acfe1218482e27fb013317dd01e0fbfcbf",
+    "base_full_name": "deepdrive/botleague"
+  }
+```
 
 #### 2. Send `/confirm` POST
 
