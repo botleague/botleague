@@ -24,7 +24,7 @@ Bots are ranked and displayed on the
 [leaderboards](https://botleague.io) which are [open source and open data](https://github.com/voyage/leaderboard-generator/data).
 
 We provide a reference implementation of bots and problems via Deepdrive, and [TBA].
- 
+
 ### How it works
 
 High level: Submit a docker container with your bot and problems it solves, 
