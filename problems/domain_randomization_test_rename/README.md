@@ -5,3 +5,5 @@ Short few second test (thus sanity) of end-to-end driving performance with one c
 Included in these view modes were depth, world normals, reflectivity, and roughness which can be seen as an approximation to a Lidar sensor. All of these modes are part of Unreal's graphics pipelines making them efficient to render.
 
 The hope is that this provides better generalization to real-world visual domains a la https://blog.openai.com/learning-dext...
+
+Checking move/rename + change in one commit
