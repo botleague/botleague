@@ -89,11 +89,11 @@ on this problem. Used to communicate back to liaison in `/confirm` and `/results
 
 #### 2. Send `/confirm` POST
 
-Problem evaluators must then send a confirmation request with the `eval-key` to `https://liaison.botleague.io/confirm` to verify that botleague indeed initiated the evaluation.
+Problem evaluators must then send a confirmation request with the `eval_key` to `https://liaison.botleague.io/confirm` to verify that botleague indeed initiated the evaluation.
 
 #### 3. Send `results.json` POST
 
-Finally evaluators POST `results.json` to `https://liaison.botleague.io/results` with the `eval-key` to complete the evaluation and to be included on the Bot League leaderboards. An example `results.json` can be found [here](problems/example_results/results.json).
+Finally evaluators POST `results.json` to `https://liaison.botleague.io/results` with the `eval_key` to complete the evaluation and to be included on the Bot League leaderboards. An example `results.json` can be found [here](problems/example_results/results.json).
 
 ### Problem versioning
 
