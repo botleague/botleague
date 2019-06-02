@@ -93,7 +93,7 @@ on this problem. Used to communicate back to liaison in `/confirm` and `/results
 
 #### 2. Send `/confirm` POST
 
-Problem evaluators must then send a confirmation POST request with the `eval_key` in the data payload encoded as JSON to 
+Problem evaluators then need to send a confirmation POST request with the `eval_key` in the data payload encoded as JSON to 
 
 ```https://liaison.botleague.io/confirm``` 
 
@@ -111,7 +111,7 @@ An example payload would be:
 
 Finally evaluators POST `results` JSON to `https://liaison.botleague.io/results` with the `eval_key` to complete the evaluation and to be included on the Bot League leaderboards, i.e.:
 
-{
+```{
   "eval_key": "424242rococo",
   "score": -11.030770867917356,
   "youtube": "https://www.youtube.com/watch?v=ebsdDI56LXE",
@@ -134,7 +134,7 @@ Finally evaluators POST `results` JSON to `https://liaison.botleague.io/results`
       "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/2019-05-27__04-06-45PM_48fc/hdf5_obvservations/0000000000.hdf5"
     ]
   }
-}
+}```
 
 ### Problem versioning
 
