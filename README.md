@@ -61,7 +61,11 @@ Problem endpoints implement a simple API, accepting one request and sending a co
 
 #### 1. Accept `/eval` POST
 
-`https://your-endpoint/eval/[problem_name]`, i.e. `/eval/domain_randomization`
+The request will come in to the endpoint defined in your problem.json definition, i.e.:
+ 
+```
+https://sim.deepdrive.io/eval/domain_randomization
+```
 
 with JSON payload containing the following:
 
@@ -89,7 +93,7 @@ on this problem. Used to communicate back to liaison in `/confirm` and `/results
 
 #### 2. Send `/confirm` POST
 
-Problem evaluators must then send a confirmation request with the `eval_key` to `https://liaison.botleague.io/confirm` to verify that botleague indeed initiated the evaluation.
+Problem evaluators must then send a confirmation POST request with the `eval_key` in the data payload encoded as JSON to `https://liaison.botleague.io/confirm` to verify that botleague indeed initiated the evaluation.
 
 #### 3. Send `results.json` POST
 
