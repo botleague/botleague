@@ -93,7 +93,7 @@ on this problem. Used to communicate back to liaison in `/confirm` and `/results
 
 #### 2. Send `/confirm` POST
 
-Problem evaluators must then send a confirmation POST request with the `eval_key` and `results` in the data payload encoded as JSON to 
+Problem evaluators must then send a confirmation POST request with the `eval_key` in the data payload encoded as JSON to 
 
 ```https://liaison.botleague.io/confirm``` 
 
@@ -103,36 +103,38 @@ An example payload would be:
 
 ```
 {
-  "eval_key": "424242rococo",
-  "results": {
-    "score": -11.030770867917356,
-    "youtube": "https://www.youtube.com/watch?v=ebsdDI56LXE",
-    "mp4": "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/2019-05-27__04-06-45PM_48fc/mp4/deepdrive_2019-05-27__04-06-45PM.mp4",
-    "gist": "https://gist.github.com/f2d73b721cdb7db33a5dbeca4af47441",
-    "sensorimotor_specific": {
-      "num_episodes": 1,
-      "average_fps": 0.007863683665802961,
-      "num_steps": 101
-    },
-    "driving_specific": {
-      "max_gforce": 0.5548695018061894,
-      "max_kph": 68.00625000000001,
-      "avg_kph": 35.75995586886264
-    },
-    "problem_specific": {
-      "summary": "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/csvs/2019-05-27__04-06-45PM_48fc/2019-05-27__04-06-45PM_r0_summary.csv",
-      "episodes": "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/csvs/2019-05-27__04-06-45PM_r1_episodes.csv",
-      "observations": [
-        "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/2019-05-27__04-06-45PM_48fc/hdf5_obvservations/0000000000.hdf5"
-      ]
-    }
-  }
+  "eval_key": "424242rococo"
 }
 ```
 
 #### 3. Send `results.json` POST
 
-Finally evaluators POST `results.json` to `https://liaison.botleague.io/results` with the `eval_key` to complete the evaluation and to be included on the Bot League leaderboards. An example `results.json` can be found [here](problems/example_results/results.json).
+Finally evaluators POST `results` JSON to `https://liaison.botleague.io/results` with the `eval_key` to complete the evaluation and to be included on the Bot League leaderboards, i.e.:
+
+{
+  "eval_key": "424242rococo",
+  "score": -11.030770867917356,
+  "youtube": "https://www.youtube.com/watch?v=ebsdDI56LXE",
+  "mp4": "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/2019-05-27__04-06-45PM_48fc/mp4/deepdrive_2019-05-27__04-06-45PM.mp4",
+  "gist": "https://gist.github.com/f2d73b721cdb7db33a5dbeca4af47441",
+  "sensorimotor_specific": {
+    "num_episodes": 1,
+    "average_fps": 0.007863683665802961,
+    "num_steps": 101
+  },
+  "driving_specific": {
+    "max_gforce": 0.5548695018061894,
+    "max_kph": 68.00625000000001,
+    "avg_kph": 35.75995586886264
+  },
+  "problem_specific": {
+    "summary": "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/csvs/2019-05-27__04-06-45PM_48fc/2019-05-27__04-06-45PM_r0_summary.csv",
+    "episodes": "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/csvs/2019-05-27__04-06-45PM_r1_episodes.csv",
+    "observations": [
+      "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/2019-05-27__04-06-45PM_48fc/hdf5_obvservations/0000000000.hdf5"
+    ]
+  }
+}
 
 ### Problem versioning
 
