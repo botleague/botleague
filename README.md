@@ -111,7 +111,8 @@ An example payload would be:
 
 Finally evaluators POST `results` JSON to `https://liaison.botleague.io/results` with the `eval_key` to complete the evaluation and to be included on the Bot League leaderboards, i.e.:
 
-```{
+```
+{
   "eval_key": "424242rococo",
   "score": -11.030770867917356,
   "youtube": "https://www.youtube.com/watch?v=ebsdDI56LXE",
