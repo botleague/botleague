@@ -7,8 +7,7 @@ contributed problems. We provide an ongoing leaderboard of the best bots in the
 world on the problems and challenges submitted. Anyone can submit
 a problem and and anyone can submit a bot.
 
-Bots are ranked and displayed on the  
-[leaderboards](https://botleague.io) which are [open source and open data](https://github.com/voyage/leaderboard-generator/data).
+Bots are ranked and displayed on the [botleague.io](https://botleague.io).
 
 We provide a reference implementation of bots and problems via Deepdrive, and [TBA].
 
