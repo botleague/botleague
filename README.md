@@ -7,23 +7,26 @@ contributed problems. We provide an ongoing leaderboard of the best bots in the
 world on the problems and challenges submitted. Anyone can submit
 a problem and and anyone can submit a bot.
 
+Bots are ranked and displayed on the  
+[leaderboards](https://botleague.io) which are [open source and open data](https://github.com/voyage/leaderboard-generator/data).
+
+We provide a reference implementation of bots and problems via Deepdrive, and [TBA].
+
 ### Conceived for self-driving
+
 The league was conceived specifically for self-driving where industry feedback to academia is limited, despite academia being the major contributor of new algorithms to self-driving.
 With Bot League, a self-driving car company can present it's toughest problems directly to the public and 
 to academia to compete on. 
 
 ### Generality
+
 Generality across problems is a key component of the way the league is structured, 
 where bots list a set of problems they can solve. Crucially, these problems
 can be within completely different simulators on different machines architectures, etc... 
 So if  a self-driving car company wants to test a neural net on its ASIC hardware,
 it can pull the docker container containing the weights, compile the net
 and evaluate it. The platform is agnostic to both bot and problem implementation.
-In this way it's more of an API for comparision and competition of AI.
-Bots are ranked and displayed on the  
-[leaderboards](https://botleague.io) which are [open source and open data](https://github.com/voyage/leaderboard-generator/data).
-
-We provide a reference implementation of bots and problems via Deepdrive, and [TBA].
+In this way Botleague is a general API for AI competition.
 
 ### How it works
 
@@ -34,7 +37,13 @@ Low level:
 
 Pull requests to [bots](bots) in this repo trigger evaluation on the set of [problems](problems) designated in its bot.json. Pull requests are then evaluated, ranked on the leaderboards, and merged so long as they are in the correct format. Bots include a docker container and optionally writeups and source code that are pulled in and tested by problem evaluators. Anyone can contribute a problem, so long as they support the minimal API. Example problem evaluators are currently Deepdrive and [TBA]. To create a problem within one the problem providers, refer to the docs of that provider.
 
-_Side note_: Reproducibility is core to making progress in research, but we put the onus of that on the problem implementations, and choose to avoid enforcing it here for now in the name of simplicity.
+#### Reproducibility 
+
+Reproducibility is core to making progress in research, and we currently put the onus of that on the problem implementations, and choose to avoid enforcing it here for now in the name of simplicity. 
+
+#### Overfitting
+
+We are working on ways to prevent overfitting in collaboration with [trustworthy.ai](http://trustworthy.ai/), including the use of their [adversarial search](http://web.stanford.edu/~hnamk/papers/OKellySiNaDuTe18.pdf) in order to more rigorously test submissions, esp. in the case of things like annual challenges where prize money is offerred.
 
 ## Bots
 
@@ -140,9 +149,13 @@ Finally evaluators POST `results` JSON to `https://liaison.botleague.io/results`
 
 ### Problem versioning
 
-In order to support testing new versions of problems (i.e. some new sim commit), Botleague will cancel currently running evaluations against the old version when a change is made to `problem.json` by sending a /cancel_eval request from the  and do a **Problem CI Run** where all ranked bots are retested against the new problem version. Bot submissions against the problem will be marked as pending until the problem CI is complete. If another problem update comes in while in “problem CI mode”, it will wait until the intermediate version finishes.
+In order to support testing new versions of problems (i.e. some new sim commit), we will rerun ranked bots (or some number of the top bots) and ensure that ranking is stable and optionally that scores are consistent with the previous ones.
 
-For purposes of explanation, think of an endpoint in this form
+#### Flow
+
+Botleague will cancel currently running evaluations against the old version when a change is made to `problem.json` by sending a `/cancel_eval` request from the  and do a **Problem CI Run** where all ranked bots are retested against the new problem version. Bot submissions against the problem will be marked as pending until the problem CI is complete. If another problem update comes in while in “problem CI mode”, it will wait until the intermediate version finishes.
+
+For purposes of explanation, and endpoint of the form
 
  [https://example.com/{problem_id](https://example.com/{problem_id)}
 
@@ -153,14 +166,14 @@ Where the problem.json is at
 [https://github.com/botleague/boteague/example/difficult_problem/problem.json](https://github.com/botleague/boteague/example/difficult_problem/problem.json)
 
 
-### Cases for new rank ordering 
+#### Cases for new rank ordering 
 
-#### Rank ordering is the same on new and previous version (common case)
+##### Rank ordering is the same on new and previous version (common case)
 
 **Resolution:** The new problem version becomes the default version, old scores are stored along with the problem.json commit and new scores are the default scores shown on the leaderboards. Points will be based soley from ranking, not score values, so the users' and bots' points will not change.
 
 
-#### Rank ordering changes
+##### Rank ordering changes
 
 **Resolution:** Eval/CI fails, problem.json updated with `"archived": true`, and new bot submissions will be disabled for this problem. Problem endpoints can create a new problem if they intended for this change, in which case the old problem will remain archived, or fix the bug and submit a pull request with `"archived": false` in problem.json to trigger another **Problem CI Run**. If the rank ordering changes on a bot pull request, as opposed to a problem pull request, we pause bot submissions on the problem in the same way, and notify the `problem.json` `"contact"` that the problem has been archived until the original ranking has been restored. 
 
