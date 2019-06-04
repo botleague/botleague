@@ -39,17 +39,17 @@ Pull requests to [bots](bots) in this repo trigger evaluation on the set of [pro
 
 #### Reproducibility 
 
-Reproducibility is core to making progress in research, and we currently put the onus of that on the problem implementations, and choose to avoid enforcing it here for now in the name of simplicity. 
+Reproducibility is core to making progress in research, and we currently put the onus of that on the problem implementations, although we may implement this functionality in Botleague at some point.
+
+For example Deepdrive kicks off **five** simultaneous runs for each evaluation, and uses the median score, video, recording for the final score (also returning the scores, videos, and recordings for each of the five).
 
 #### Overfitting
 
-We are working on ways to prevent overfitting in collaboration with [trustworthy.ai](http://trustworthy.ai/), including the use of their [adversarial search](http://web.stanford.edu/~hnamk/papers/OKellySiNaDuTe18.pdf) in order to more rigorously test submissions, esp. in the case of things like annual challenges where prize money is offerred.
+We are working on ways to prevent overfitting in collaboration with [trustworthy.ai](http://trustworthy.ai/), including the use of their [adversarial search](http://web.stanford.edu/~hnamk/papers/OKellySiNaDuTe18.pdf) or just simple fuzzing of given parameters in order to more rigorously test submissions, esp. in the case of things like annual challenges where prize money is offerred.
 
 ## Bots
 
-### Submission
-
-Submit a pull request to this repo with a bot.json under [bots](bots)/{github-name}/{repo-name} - with a [bot.json](crizcraig/forward-bot/bot.json) to have your bot 
+To submit a bot, send a pull request to this repo with a bot.json under [bots](bots)/{github-name}/{repo-name} - with a [bot.json](crizcraig/forward-bot/bot.json) to have your bot 
 evaluated and ranked on the leaderboards.
  
 You must push the docker tag referred to in your bot.json before submitting the pull request.
@@ -183,8 +183,4 @@ We will avoid requiring score parity for now across problem versions. We will co
 
 Challenges are sets of problems a bot is tasked with generalizing across. 
 
-## Testing for determinism
 
-For now we will handle this within the problem endpoint, although we should implement this functionality in a modular way as most problems will want some version of this, likely with different numbers of job runs based on resource constraints and variability of the evaluation.
-
-For example Deepdrive, we kick off **five** simultaneous runs for each evaluation, and use the median score, video, recording for the final score (also returning the scores, videos, and recordings for each of the five).
