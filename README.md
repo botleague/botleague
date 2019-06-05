@@ -14,7 +14,7 @@ We provide a reference implementation of bots and problems via Deepdrive, and [T
 ### Conceived for self-driving
 
 The league was conceived specifically for self-driving where industry feedback to academia is limited, despite academia being the major contributor of new algorithms to self-driving.
-With Bot League, a self-driving car company can present it's toughest problems directly to the public and 
+With Botleague, a self-driving car company can present it's toughest problems directly to the public and 
 to academia to compete on. 
 
 ### Generality
