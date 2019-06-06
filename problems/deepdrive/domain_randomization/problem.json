@@ -1,5 +1,5 @@
 {
-  "endpoint": "https://example.com/domain_randomization",
+  "endpoint": "https://sim.deepdrive.io/domain_randomization",
   "author": "Craig Quiter",
   "contact": "craig@deepdrive.io",
   "sim_name": "Deepdrive",
@@ -8,5 +8,5 @@
   "mp4": "s3...",
   "jpeg": "s3...",
   "tags": ["self-driving", "domain-randomization"],
-  "$comment": "Bot submission ranking must be consistent over time or problem will be archvied. Sim will be network isolated during eval."
+  "$comment": "Bot submission ranking must be consistent over time or problem will be archived. Sim will be network isolated during eval."
 }
