@@ -117,7 +117,9 @@ An example payload would be:
 
 #### 3. Send `results.json` POST
 
-Finally evaluators POST `results` JSON to `https://liaison.botleague.io/results` with the `eval_key` to complete the evaluation and to be included on the Bot League leaderboards, i.e.:
+Finally evaluators POST `results` JSON to `https://liaison.botleague.io/results` 
+with the `eval_key` to complete the evaluation and to be 
+included on the leaderboards.
 
 ```
 {
@@ -143,6 +145,16 @@ Finally evaluators POST `results` JSON to `https://liaison.botleague.io/results`
       "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/2019-05-27__04-06-45PM_48fc/hdf5_obvservations/0000000000.hdf5"
     ]
   }
+}
+```
+
+If there was an error in the evaluation, return an error field with the eval_key
+as in the following:
+
+```
+{
+  "eval_key": "424242rococo",
+  "error": "some error message"
 }
 ```
 
