@@ -44,7 +44,7 @@ For example Deepdrive kicks off **five** simultaneous runs for each evaluation, 
 
 #### Overfitting
 
-We are working on ways to prevent overfitting in collaboration with [trustworthy.ai](http://trustworthy.ai/), including the use of their [adversarial search](http://web.stanford.edu/~hnamk/papers/OKellySiNaDuTe18.pdf) or just simple fuzzing of given parameters in order to more rigorously test submissions, esp. in the case of things like annual challenges where prize money is offerred. In Deepdrive, this will mean randomly varying other vehicles, lighting, handling, surface friction, actuation randomness, etc...
+We are working on ways to prevent overfitting in collaboration with [TBA], including the use of their [adversarial search](http://web.stanford.edu/~hnamk/papers/OKellySiNaDuTe18.pdf) or just simple fuzzing of given parameters in order to more rigorously test submissions, esp. in the case of things like annual challenges where prize money is offerred. In Deepdrive, this will mean randomly varying other vehicles, lighting, handling, surface friction, actuation randomness, etc...
 
 ## Bots
 
