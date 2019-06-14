@@ -124,7 +124,7 @@ included on the leaderboards.
 ```
 {
   "eval_key": "424242rococo",
-  "results" {
+  "results": {
       "score": -11.030770867917356,
       "youtube": "https://www.youtube.com/watch?v=ebsdDI56LXE",
       "mp4": "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/2019-05-27__04-06-45PM_48fc/mp4/deepdrive_2019-05-27__04-06-45PM.mp4",
@@ -145,8 +145,8 @@ included on the leaderboards.
         "observations": [
           "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/2019-05-27__04-06-45PM_48fc/hdf5_obvservations/0000000000.hdf5"
         ]
-      }  
-  },
+      }
+  }
 }
 ```
 
