@@ -65,7 +65,7 @@ A bot-league compatible endpoint mush be included in a new problem.
 
 ### Problem Endpoints
 
-Problem endpoints implement a simple API, accepting one request and sending a confirmation then results to liaison.botleague.io. An example problem endpoint can be found at https://github.com/deepdrive/eval.deepdrive.io
+Problem endpoints implement a simple API, accepting one request and sending a confirmation then results to liaison.botleague.io. An example problem endpoint can be found at https://github.com/deepdrive/problem-endpoint
 
 #### 1. Accept `/eval` POST
 
