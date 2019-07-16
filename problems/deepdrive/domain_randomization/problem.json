@@ -2,11 +2,7 @@
   "endpoint": "https://sim.deepdrive.io/domain_randomization",
   "author": "Craig Quiter",
   "contact": "craig@deepdrive.io",
-  "sim_name": "Deepdrive",
   "display_name": "Domain Randomization Sanity",
   "youtube": "https://www.youtube.com/watch?v=Aj0QYTQMV_U",
-  "mp4": "s3...",
-  "jpeg": "s3...",
   "tags": ["self-driving", "domain-randomization"],
-  "$comment": "Bot submission ranking must be consistent over time or problem will be archived. Sim will be network isolated during eval."
 }
