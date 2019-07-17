@@ -111,7 +111,7 @@ An example payload would be:
 
 ```
 {
-  "eval_key": "424242rococo"
+  "eval_key": "4UHHRJB9SDIAZ7BKE63B4R4I3"
 }
 ```
 
@@ -123,7 +123,7 @@ included on the leaderboards.
 
 ```
 {
-  "eval_key": "424242rococo",
+  "eval_key": "4UHHRJB9SDIAZ7BKE63B4R4I3",
   "results": {
       "score": -11.030770867917356,
       "youtube": "https://www.youtube.com/watch?v=ebsdDI56LXE",
@@ -155,7 +155,7 @@ as in the following:
 
 ```
 {
-  "eval_key": "424242rococo",
+  "eval_key": "4UHHRJB9SDIAZ7BKE63B4R4I3",
   "error": "some error message"
 }
 ```
