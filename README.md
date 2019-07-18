@@ -36,6 +36,10 @@ Low level:
 
 Pull requests to [bots](bots) in this repo trigger evaluation on the set of [problems](problems) designated in its bot.json. Pull requests are then evaluated, ranked on the leaderboards, and merged so long as they are in the correct format. Bots include a docker container and optionally writeups and source code that are pulled in and tested by problem evaluators. Anyone can contribute a problem, so long as they support the minimal API. Example problem evaluators are currently Deepdrive and [TBA]. To create a problem within one the problem providers, refer to the docs of that provider.
 
+#### Data flow diagram
+
+![Data flow diagram](Botleague_Dataflow.svg)
+
 #### Reproducibility 
 
 Reproducibility is core to making progress in research, and we currently put the onus of that on the problem implementations, although we may implement this functionality in Botleague at some point.
@@ -195,5 +199,3 @@ We will avoid requiring score parity for now across problem versions. We will co
 ## Challenges
 
 Challenges are sets of problems a bot is tasked with generalizing across. 
-
-
