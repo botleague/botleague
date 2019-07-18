@@ -29,14 +29,16 @@ In this way Botleague is a general API for AI competition.
 
 ### How it works
 
-High level: Submit a docker container with your bot and problems it solves, 
+*High level* 
+
+Submit a docker container with your bot and problems it solves, 
 and get ranked on botleague.io.
 
-Low level:
+*Low level*
 
 Pull requests to [bots](bots) in this repo trigger evaluation on the set of [problems](problems) designated in its bot.json. Pull requests are then evaluated, ranked on the leaderboards, and merged so long as they are in the correct format. Bots include a docker container and optionally writeups and source code that are pulled in and tested by problem evaluators. Anyone can contribute a problem, so long as they support the minimal API. Example problem evaluators are currently Deepdrive and [TBA]. To create a problem within one the problem providers, refer to the docs of that provider.
 
-#### Data flow diagram
+#### Flow
 
 ![Data flow diagram](Botleague_Dataflow.svg)
 
