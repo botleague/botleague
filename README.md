@@ -1,4 +1,4 @@
-# Bot League
+# Botleague
 
 ## Open league for AI competition
 
