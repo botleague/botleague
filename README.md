@@ -135,6 +135,7 @@ included on the leaderboards.
       "youtube": "https://www.youtube.com/watch?v=ebsdDI56LXE",
       "mp4": "https://s3-us-west-1.amazonaws.com/deepdrive/artifacts/2019-05-27__04-06-45PM_48fc/mp4/deepdrive_2019-05-27__04-06-45PM.mp4",
       "gist": "https://gist.github.com/f2d73b721cdb7db33a5dbeca4af47441",
+      "logs": "https://storage.googleapis.com/deepdriveio/botleague_eval_logs/TEST_JOB.txt",
       "sensorimotor_specific": {
         "num_episodes": 1,
         "average_fps": 0.007863683665802961,
