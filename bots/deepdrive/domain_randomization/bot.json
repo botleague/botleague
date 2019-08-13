@@ -1,4 +1,7 @@
 {
+  "$comment-SOURCE-COMMIT": "[Optional] Link to a snapshot of your source.",
+  "source_commit": "https://github.com/deepdrive/deepdrive/tree/418911c2256edca5b9a6d0bc92b106dd13ac195a",
+  
   "$comment-PROBLEMS": "This is the list of problems your bot will be ranked on. If you wish to be ranked on a challenge, include all of the problems in that challenge here. Think of these problems as the skills your bot is trained to exhibit.",
   "problems": [
     "deepdrive/domain_randomization"
