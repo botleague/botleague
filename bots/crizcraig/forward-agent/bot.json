@@ -1,7 +1,6 @@
 {
-  "$comment-SOURCE-COMMIT": "Link to specific github commit. README.md's in source repo are rendered on the leaderboards. Dockerfiles must be present in the source repo and building should be instant after pulling the docker_tag",
+  "$comment-SOURCE-COMMIT": "[Optional] Link to a snapshot of your source.",
   "source_commit": "https://github.com/crizCraig/forward-agent/commit/eefc93d95944099d3e61cda6542bb4ffe7a28abf",
-
 
   "$comment-PROBLEMS": "This is the list of problems your bot will be ranked on. If you wish to be ranked on a challenge, include all of the problems in that challenge here. Think of these problems as the skills your bot is trained to exhibit.",
   "problems": [
