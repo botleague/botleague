@@ -13,3 +13,4 @@
   "$comment-SEED": "[Optional] Seed value allows directly comparing performance across problem evaluations. IMPORTANT: Specifying a seed value will result in an _unranked_ submission in order to prevent overfitting. Omitting the seed or setting the seed to 'random' results in the generation of a single random seed that is broadcast to each of this bot's problem endpoints",
   "seed": "random"
 }
+
