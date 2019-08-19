@@ -1,5 +1,5 @@
 {
-  "endpoint": "https://sim.deepdrive.io/eval/domain_randomization",
+  "endpoint": "https://deepdrive-problem-endpoint-dot-silken-impulse-217423.appspot.com/eval/domain_randomization",
   "author": "Craig Quiter",
   "contact": "craig@deepdrive.io",
   "display_name": "Domain Randomization Sanity",
