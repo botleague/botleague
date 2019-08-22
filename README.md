@@ -173,20 +173,9 @@ In order to support testing new versions of problems (i.e. some new sim commit),
 
 #### Flow
 
-Botleague will cancel currently running evaluations against the old version when a change is made to `problem.json` by sending a `/cancel_eval` request from the  and do a **Problem rerun** where all ranked bots are retested against the new problem version. Bot submissions against the problem will be marked as pending until the problem rerun is complete. If another problem update comes in while a problem rerun is in progress, it will wait until the intermediate version finishes.
+When a problem definition changes, Botleague will perform a **Problem CI** where all ranked bots are retested against the new problem version. If another problem update comes in while a problem CI is in progress, it will wait until the intermediate version finishes. When all bots are finished, scores and ranks will be compared, and PASS/FAIL will be determined via deviation from the previous version per the problem definition.
 
-For purposes of explanation, and endpoint of the form
-
- [https://example.com/{problem_id](https://example.com/{problem_id)}
-
-i.e. [https://example.com/difficult_problem](https://example.com/difficult_problem) - Current commit version `824914daaaee006a99086ff63b2544e3b5f55fab`
-
-Where the problem.json is at
-
-[https://github.com/botleague/boteague/example/difficult_problem/problem.json](https://github.com/botleague/boteague/example/difficult_problem/problem.json)
-
-
-#### Cases for new rank ordering 
+#### Cases for new rank ordering
 
 ##### Rank ordering is the same on new and previous version (common case)
 
