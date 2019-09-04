@@ -29,6 +29,6 @@
   "$comment-ACCEPTABLE_SCORE_DEVIATION": "[Optional] Acceptable score deviation from the mean for bots from run to run",
   "acceptable_score_deviation": 2000,
   
-  "$comment-RERUN": "[Optional] A field which can be updated to cause a rerun. A datetime string is a good value for this.",
+  "$comment-RERUN": "[Optional] A field which can be updated to trigger a rerun. A datetime string is a good value for this.",
   "rerun": ""
 }
