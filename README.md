@@ -190,4 +190,4 @@ We will avoid requiring score parity for now across problem versions. We will co
 
 ## Challenges
 
-Challenges are sets of problems a bot is tasked with generalizing across. 
+Challenges are sets of problems a bot is tasked with generalizing across.
