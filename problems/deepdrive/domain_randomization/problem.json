@@ -1,34 +1,38 @@
 {
+
   "$comment-ENDPOINT": "Eval requests will be sent here",
   "endpoint": "https://sim.deepdrive.io/eval/domain_randomization",
-  
+
   "$comment-AUTHOR": "[Optional] Author name",
   "author": "Deepdrive",
-  
+
   "$comment-CONTACT": "[Optional] Contact email",
   "contact": "craig@deepdrive.io",
-  
+
   "$comment-DISPLAY_NAME": "Name to be displayed on leaderboard page",
   "display_name": "Domain Randomization Sanity",
-  
+
   "$comment-YOUTUBE": "[Optional] Video demonstrating the problem to be displayed on leaderboard page",
   "youtube": "https://www.youtube.com/watch?v=Aj0QYTQMV_U",
-  
+
   "$comment-TAGS": "[Optional] Categories this problem falls under",
-  "tags": ["self-driving", "domain-randomization"],
-  
+  "tags": [
+    "self-driving",
+    "domain-randomization"
+  ],
+
   "$comment-MAX_SECONDS": "[Optional] Max time this problem can run. Default will be 5 minutes if not set",
   "max_seconds": 100,
-  
+
   "$comment-MAX_MS_PER_STEP": "[Optional] Time that agent is allowed to 'think' every step",
   "max_ms_per_step": 200,
-  
+
   "$comment-VERSION": "[Optional] Version of the problem. Change this to rerun bots and ensure scores are withing acceptable ranges.",
-  "version": "3.0.20190723231624",
-  
+  "version": "3.0.20190910005124",
+
   "$comment-ACCEPTABLE_SCORE_DEVIATION": "[Optional] Acceptable score deviation from the mean for bots from run to run",
   "acceptable_score_deviation": 2000,
-  
+
   "$comment-RERUN": "[Optional] A field which can be updated to trigger a rerun.",
   "rerun": "7"
 }
