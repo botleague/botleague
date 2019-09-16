@@ -34,5 +34,5 @@
   "acceptable_score_deviation": 2000,
 
   "$comment-RERUN": "[Optional] A field which can be updated to trigger a rerun.",
-  "rerun": "7"
+  "rerun": "2019-09-16_11-14-27PM"
 }
