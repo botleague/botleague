@@ -22,7 +22,7 @@
   ],
 
   "$comment-MAX_SECONDS": "[Optional] Max time this problem can run. Default will be 5 minutes if not set",
-  "max_seconds": 100,
+  "max_seconds": 1000,
 
   "$comment-MAX_MS_PER_STEP": "[Optional] Time that agent is allowed to 'think' every step",
   "max_ms_per_step": 200,
