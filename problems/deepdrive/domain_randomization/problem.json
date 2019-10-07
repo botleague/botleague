@@ -31,7 +31,7 @@
   "version": "3.0.20190917000746",
 
   "$comment-ACCEPTABLE_SCORE_DEVIATION": "[Optional] Acceptable score deviation from the mean for bots from run to run",
-  "acceptable_score_deviation": 6000,
+  "acceptable_score_deviation": 0,
 
   "$comment-RERUN": "[Optional] A field which can be updated to trigger a rerun.",
   "rerun": "2019-09-19_11-52-43PM"
