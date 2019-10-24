@@ -1,0 +1,15 @@
+{
+  "$comment-SOURCE-COMMIT": "[Optional] Link to a snapshot of your source.",
+  "source_commit": "https://github.com/deepdrive/deepdrive/tree/418911c2256edca5b9a6d0bc92b106dd13ac195a",
+  
+  "$comment-PROBLEMS": "This is the list of problems your bot will be ranked on. If you wish to be ranked on a challenge, include all of the problems in that challenge here. Think of these problems as the skills your bot is trained to exhibit.",
+  "problems": [
+    "deepdrive/domain_randomization"
+  ],
+
+  "$comment-DOCKER-TAG": "Docker tag of your bot for problem evaluators to pull",
+  "docker_tag": "deepdriveio/deepdrive:bot_pid",
+
+  "$comment-SEED": "[Optional] Seed value allows directly comparing performance across problem evaluations. IMPORTANT: Specifying a seed value will result in an _unranked_ submission in order to prevent overfitting. Omitting the seed or setting the seed to 'random' results in the generation of a single random seed that is broadcast to each of this bot's problem endpoints",
+  "seed": "random"
+}
