@@ -3,7 +3,7 @@
   "source_commit": "https://github.com/crizCraig/forward-agent/tree/1782c2250c9683f92b6fca7d52463a5d57113487",
 
   "$comment-PROBLEMS": "This is the list of problems your bot will be ranked on. If you wish to be ranked on a challenge, include all of the problems in that challenge here. Think of these problems as the skills your bot is trained to exhibit.",
-  "problems": [],
+  "problems": ["deepdrive/domain_randomization"],
 
   "$comment-DOCKER-TAG": "Docker tag for problem evaluators to pull",
   "docker_tag": "crizcraig/forward-agent",
