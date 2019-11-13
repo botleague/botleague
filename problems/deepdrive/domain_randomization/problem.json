@@ -28,7 +28,7 @@
   "max_ms_per_step": 200,
 
   "$comment-VERSION": "[Optional] Version of the problem. Change this to rerun bots and ensure scores are withing acceptable ranges.",
-  "version": "3.1.20191112232556",
+  "version": "3.1.20191113181810",
 
   "$comment-ACCEPTABLE_SCORE_DEVIATION": "[Optional] Acceptable score deviation from the mean for bots from run to run",
   "acceptable_score_deviation": 12000,
