@@ -4,5 +4,5 @@
         "deepdrive/domain_randomization",
         "deepdrive/unprotected_left"
     ],
-    "seed": "random",
+    "seed": "random"
 }
