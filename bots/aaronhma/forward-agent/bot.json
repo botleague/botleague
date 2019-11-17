@@ -1,4 +1,8 @@
-{ 
+{
     "docker_tag": "crizcraig/forward-agent",
-    "problems": ["deepdrive/unprotected_left"] 
+    "problems": [
+        "deepdrive/domain_randomization",
+        "deepdrive/unprotected_left"
+    ],
+    "seed": "random"
 }
