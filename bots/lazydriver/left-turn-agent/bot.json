@@ -1,0 +1,4 @@
+{ 
+  "docker_tag": "lazydriver/deepdrive:left-turn-agent",
+  "problems": ["deepdrive/unprotected_left"] 
+}
