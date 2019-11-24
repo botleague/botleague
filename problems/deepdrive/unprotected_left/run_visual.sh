@@ -5,10 +5,10 @@ set -e
 export DEEPDRIVE_PUBLIC=true
 
 python main.py \
-      --server \
+      # --server \
       --agent dagger_mobilenet_v2 \
       --use-latest-model \
-      --max-steps=1400 \
+      --max-steps=10 \
       --max-episodes=1 \
       --record \
       --eval-only \
