@@ -1,4 +1,4 @@
 { 
-  "docker_tag": "memanuel/forward-agent",
+  "docker_tag": "memanuel/deepdrive/agents/forward-agent",
   "problems": ["deepdrive/unprotected_left"] 
 }
