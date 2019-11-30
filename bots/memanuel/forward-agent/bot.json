@@ -1,5 +1,5 @@
 { 
-  "docker_tag": "memanuel/deepdrive/agents/forward_agent/",
+  "docker_tag": "bryanlee99/deepdrive:left-agent",
   "problems": ["deepdrive/unprotected_left"] 
 }
 
