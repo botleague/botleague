@@ -1,6 +1,5 @@
 { 
-  "docker_tag": "crizcraig/forward_agent",
-  "problems": ["deepdrive/unprotected_left"] 
+  
 }
 
 
