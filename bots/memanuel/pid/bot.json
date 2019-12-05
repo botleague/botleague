@@ -1,0 +1,6 @@
+{ 
+  "docker_tag": "bryanlee99/deepdrive:bot-pid",
+  "problems": ["deepdrive/unprotected_left"] 
+}
+
+

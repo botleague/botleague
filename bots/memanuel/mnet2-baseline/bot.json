@@ -1,0 +1,6 @@
+{ 
+  "docker_tag": "bryanlee99/deepdrive:bot-mnet2-baseline",
+  "problems": ["deepdrive/unprotected_left"] 
+}
+
+
