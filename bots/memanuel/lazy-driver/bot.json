@@ -1,6 +1,0 @@
-{ 
-  "docker_tag": "bryanlee99/deepdrive:bot-lazy-driver",
-  "problems": ["deepdrive/unprotected_left"] 
-}
-
-
