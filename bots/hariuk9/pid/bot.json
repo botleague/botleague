@@ -1,0 +1,4 @@
+{ 
+  "docker_tag": "hariuk9/deepdrive:bot_pid",
+  "problems": ["deepdrive/unprotected_left"] 
+}
