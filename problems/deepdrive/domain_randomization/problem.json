@@ -34,5 +34,5 @@
   "acceptable_score_deviation": 12000,
 
   "$comment-RERUN": "[Optional] A field which can be updated to trigger a rerun.",
-  "rerun": "deepdrive-build-2019-12-08_07-01-08PM"
+  "rerun": "deepdrive-build-2020-02-11_02-49-14AM"
 }
