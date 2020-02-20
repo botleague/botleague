@@ -1,4 +1,4 @@
 { 
-  "docker_tag":  "rakshith097/deepdrive:test",
+  "docker_tag":  "rakshith097/deepdrive:submit_v0",
   "problems": ["deepdrive/unprotected_left"] 
 }
