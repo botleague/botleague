@@ -4,7 +4,8 @@
   
   "$comment-PROBLEMS": "This is the list of problems your bot will be ranked on. If you wish to be ranked on a challenge, include all of the problems in that challenge here. Think of these problems as the skills your bot is trained to exhibit.",
   "problems": [
-    "deepdrive/domain_randomization"
+    "deepdrive/domain_randomization",
+    "deepdrive/unprotected_left"
   ],
 
   "$comment-DOCKER-TAG": "Docker tag of your bot for problem evaluators to pull",
