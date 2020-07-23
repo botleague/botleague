@@ -200,10 +200,4 @@ The following projects deploy, run, and autoscale a complex real-world problem: 
 * https://github.com/deepdrive/problem-coordinator
 * https://github.com/deepdrive/problem-worker
 
-These have been created in such a way that changing the constants in the shared package
-
-https://github.com/deepdrive/problem-constants
-
-will allow easily deploying your own problem-endpoint capable of running any bot on botleague!
-
 
