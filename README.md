@@ -200,4 +200,4 @@ The following projects deploy, run, and autoscale a complex real-world problem: 
 * https://github.com/deepdrive/problem-coordinator
 * https://github.com/deepdrive/problem-worker
 
-
+They have been written in such a way that variables you would need to change for a new problem all begin with `deepdrive` or `DEEPDRIVE`.
