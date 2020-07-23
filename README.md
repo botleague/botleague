@@ -194,7 +194,7 @@ Challenges are sets of problems a bot is tasked with generalizing across.
 
 ## Example problem implementation
 
-The following projects deploy, run, and autoscale a complex real-world problem: self-driving in the [Deepdrive](https://deepdrive.io) simulator. Spefically they implement the evaluation of self-driving agents in several scenarios in Unreal Engine running on Google Computing Services (GCP).
+The following projects deploy, run, and autoscale a complex real-world problem: self-driving in the [Deepdrive](https://deepdrive.io) simulator on GCP.
 
 * https://github.com/deepdrive/problem-endpoint
 * https://github.com/deepdrive/problem-coordinator
