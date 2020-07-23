@@ -192,13 +192,13 @@ We will avoid requiring score parity for now across problem versions. We will co
 
 Challenges are sets of problems a bot is tasked with generalizing across.
 
-## Reference implementation
+## Reference problem implementation
 
 The following projects implement evaluation of self-driving agents in Unreal Engine running on GCP.
 
-https://github.com/deepdrive/problem-endpoint
-https://github.com/deepdrive/problem-coordinator
-https://github.com/deepdrive/problem-worker
+* https://github.com/deepdrive/problem-endpoint
+* https://github.com/deepdrive/problem-coordinator
+* https://github.com/deepdrive/problem-worker
 
 These have been created in such a way that changing the constants in the shared package
 
